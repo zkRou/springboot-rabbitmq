@@ -7,5 +7,5 @@ import lombok.Data;
 @AllArgsConstructor
 public class RabbitmqMessage<T> {
 
-    private String message;
+    private T message;
 }

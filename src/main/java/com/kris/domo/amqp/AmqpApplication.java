@@ -13,22 +13,4 @@ public class AmqpApplication {
         SpringApplication.run(AmqpApplication.class, args);
     }
 
-
-
-/*	@Bean
-    public Queue Queue(){
-		return new Queue("test_consume", true, false, false);
-	}
-
-	@Bean
-	public DirectExchange directExchange(){
-		return new DirectExchange("test_exchange");
-	}
-
-	@Bean
-	public Binding Bingding(){
-		return new Binding("test_consume", Binding.DestinationType.QUEUE,
-				"test_exchange","testRoutingKey", null);
-	}*/
-
 }

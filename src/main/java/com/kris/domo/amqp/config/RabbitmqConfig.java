@@ -41,22 +41,8 @@ public class RabbitmqConfig {
     }
 
     @Bean
-    public Binding bindingDirectExchange(Queue queue, DirectExchange directExchange) {
-        return BindingBuilder.bind(queue).to(directExchange).with(ROUTINGKEY_NAME);
-    }
-/*
-    @Bean
-    SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
-                                             MessageListenerAdapter listenerAdapter) {
-        SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
-        container.setConnectionFactory(connectionFactory);
-        container.setQueueNames(QUEUE_NAME);
-        container.setMessageListener(listenerAdapter);
-        return container;
+    public Binding bindingDirectExchange() {
+        return BindingBuilder.bind(queue()).to(directExchange()).with(ROUTINGKEY_NAME);
     }
 
-    @Bean
-    MessageListenerAdapter listenerAdapter(Receiver receiver) {
-        return new MessageListenerAdapter(receiver, "receiveMessage");
-    }*/
 }
